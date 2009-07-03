@@ -1,0 +1,9 @@
+h1. captain_oveur
+
+Gem-Based Admins for Clearance
+
+"Do you like movies about gladiators?":http://www.wavsource.com/snds_2009-06-27_354866371766528/movies/airplane/gladiators.wav
+
+== Copyright
+
+Copyright (c) 2009 Disruptive Ventures, Inc. See LICENSE for details.
