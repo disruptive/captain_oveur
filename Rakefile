@@ -9,6 +9,7 @@ begin
     gem.email = "jerry@jerryr.com"
     gem.homepage = "http://github.com/jerry/captain_oveur"
     gem.authors = ["Jerry Richardson"]
+    gem.add_dependency('thoughtbot-clearance', '>= 0.6.0')
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 
