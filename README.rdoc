@@ -1,0 +1,7 @@
+= captain_oveur
+
+Description goes here.
+
+== Copyright
+
+Copyright (c) 2009 Jerry Richardson. See LICENSE for details.
