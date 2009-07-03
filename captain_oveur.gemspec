@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{captain_oveur}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jerry Richardson"]
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
      "README.textile",
      "Rakefile",
      "VERSION",
+     "captain_oveur.gemspec",
      "lib/captain_oveur.rb",
      "lib/clearance/authentication.rb",
      "test/captain_oveur_test.rb",
