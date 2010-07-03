@@ -15,6 +15,10 @@ Feature: Administrate Site Users
     Given I have signed in with "jerry@jerryr.dev/password"
     When I go to the user administration home page
     Then I should see "Please Login as an administrator to Access that Feature."
+    
+  Scenario: Visitors should not be able to manage users
+    When I go to the user administration home page
+    Then I should see "Please Login as an administrator to Access that Feature."
         
   Scenario: Administrator should be able to add a new User
     Given I am an admin signed in as "ken@tacostorm.dev/password"
