@@ -1,0 +1,15 @@
+<% semantic_form_for [:admin, @user] do |form| %>
+  <% form.inputs do %>
+    <%= form.input :email, :label => 'Email' %>
+    <%= form.input :password, :label => 'Password' %>
+    <%= form.input :password_confirmation, :label => 'Confirm Password' %>
+    <%= form.input :first_name, :label => 'First name' %>
+    <%= form.input :last_name, :label => 'Last name' %>
+    <%= form.input :admin, :label => 'Admin' %>
+    <%= form.input :super_admin, :label => 'Super admin' %>
+    <%= form.input :email_confirmed, :label => 'Email confirmed' %>
+  <% end %>
+  <% form.buttons do %>
+    <%= form.commit_button %>
+  <% end %>
+<% end %>

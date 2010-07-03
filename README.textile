@@ -2,8 +2,14 @@ h1. captain_oveur
 
 Gem-Based Admins for Clearance
 
-"Do you like movies about gladiators?":http://www.wavsource.com/snds_2009-06-27_354866371766528/movies/airplane/gladiators.wav
+Do you like movies about gladiators or Clearance-based authentication? If you do, you and Captain Oveur will become fast friends. Captain Oveur adds user-management tools and admin authentication to make flights of web development smoother.
 
-== Copyright
+h2. PENDING
 
-Copyright (c) 2009 Disruptive Ventures, Inc. See LICENSE for details.
+* A complete suite Cucumber-Based Tests to complement the Features in Clearance
+
+h2. NOTE
+
+A lot of this gem looks exactly like clearance. Firstly, I am an unabashed fan of thoughtbot and clearance. Given the problem domain, I also think it was the best way to handle a lot of issues, but I am open to criticism and suggestions.
+
+&copy; 2009-2010 Disruptive Ventures, Inc. See LICENSE for details.

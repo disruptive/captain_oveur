@@ -1,0 +1,12 @@
+<h1>User Management Home Page</h1>
+
+<ul>
+  <% @users.each do |u| %>
+    <li class='users'><%= u.first_name %> <%= u.last_name %> - <%= link_to u.email, admin_user_path(u), :id =>  "show_user_#{u.id}" %><br>
+      <%= link_to "Edit", edit_admin_user_path(u), :id => "edit_user_#{u.id}" %>      
+      <%= button_to "Delete", { :action => "destroy", :id => u.id }, :confirm => "Are you sure?", :method => :delete, :id => "delete_user_#{u.id}" %>
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Add a new user", new_admin_user_path %></p>

@@ -6,10 +6,10 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "captain_oveur"
     gem.summary = %Q{Admins for Clearance}
-    gem.email = "jerry@jerryr.com"
-    gem.homepage = "http://github.com/jerry/captain_oveur"
+    gem.email = "jerry@disruptiveventures.com"
+    gem.homepage = "http://github.com/disruptive/captain_oveur"
     gem.authors = ["Jerry Richardson"]
-    gem.add_dependency('thoughtbot-clearance', '>= 0.6.0')
+    gem.add_dependency('clearance', '>= 0.8.8')
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 
