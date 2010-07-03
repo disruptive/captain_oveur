@@ -1,6 +1,6 @@
 require 'digest/sha1'
 
-module Clearance
+module CaptainOveur
   module User
 
     def self.included(model)

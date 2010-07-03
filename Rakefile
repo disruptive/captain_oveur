@@ -8,6 +8,6 @@ Echoe.new('captain_oveur', '0.8.8') do |p|
   p.author         = "Jerry Richardson"
   p.email          = "jerry@disruptiveventures.com"
   p.ignore_pattern = []
-  p.runtime_dependencies = ["clearance >=0.8.8"]
+  p.runtime_dependencies = ["clearance >=0.8.8","formtastic"]
   p.development_dependencies = []
 end

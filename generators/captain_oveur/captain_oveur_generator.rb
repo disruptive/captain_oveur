@@ -15,8 +15,8 @@ class CaptainOveurGenerator < Rails::Generator::Base
       m.insert_into "config/routes.rb",
                     "CaptainOveur::Routes.draw(map)"
 
-      # m.directory File.join("test", "factories")
-      #       m.file "factories.rb", "test/factories/captain_oveur.rb"
+      m.directory File.join("test", "factories")
+                  m.file "admins.rb", "test/factories/clearance_admins.rb"
 
       m.migration_template "migrations/update_admins.rb",
                            'db/migrate',
