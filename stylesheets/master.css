@@ -1,0 +1,27 @@
+body { background-color: grey; text-align: center; margin: 0px; padding: 0px; }
+#wrapper { width: 970px; margin: 0px auto; border: 1px solid black; }
+#header { height: 202px; background-color: #000; padding-left: 30px; }
+#header_text { float: left; }
+#the_captain { float: right; }
+h1.airstream {font: 90px/102px 'AirstreamRegular', Arial, sans-serif;letter-spacing: 0; color: white; margin: 10px 0px; padding: 0px;}
+h3.airstream {font: 40px/46px 'AirstreamRegular', Arial, sans-serif;letter-spacing: 0; color: white; margin: 10px 0px; padding: 0px;}
+h1.airstream a { color: white; text-decoration: none; }
+@font-face {
+	font-family: 'AirstreamRegular';
+	src: url('../fonts/Airstream-webfont.eot');
+	src: local('../fonts/Airstream-webfont.ttf'), url('../fonts/Airstream-webfont.woff') format('woff'), url('../fonts/Airstream-webfont.ttf') format('truetype'), url('../fonts/Airstream-webfont.svg#webfontAOJTPlzn') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'firsttestRegular';
+	src: url('Forque-webfont.eot');
+	src: local('☺'), url('../fonts/Forque-webfont.woff') format('woff'), url('../fonts/Forque-webfont.ttf') format('truetype'), url('../fonts/Forque-webfont.svg#webfontmmrUNGud') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+h2.forque {font: 36px/42px 'firsttestRegular', Arial, sans-serif;letter-spacing: 0; margin: 0px; padding: 0px; }
+h2 a { text-decoration: none; color: white; margin: 0px; padding: 0px; }
+#content { text-align: left; padding: 12px; background-color: #666; }
+#content p { color: #fff; font-family: "Lucida Grande", Lucida, Verdana, sans-serif; }
+#footer { margin: 0px auto; width: 946px; background-color: #000; color: #fff; padding: 12px; text-align: left;}

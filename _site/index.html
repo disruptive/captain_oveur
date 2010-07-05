@@ -3,36 +3,8 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>Captain Oveur - </title>
-    <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="stylesheets/master.css" type="text/css" media="screen" charset="utf-8"/>
     <link rel="alternate" type="application/atom+xml" href="/atom.xml" />
-    <style>
-      body { background-color: grey; text-align: center; margin: 0px; padding: 0px; }
-      #wrapper { width: 970px; margin: 0px auto; border: 1px solid black; }
-      #header { height: 202px; background-color: #000; padding-left: 30px; }
-      #header_text { float: left; }
-      #the_captain { float: right; }
-      h1.airstream {font: 90px/102px 'AirstreamRegular', Arial, sans-serif;letter-spacing: 0; color: white; margin: 10px 0px; padding: 0px;}
-      h3.airstream {font: 40px/46px 'AirstreamRegular', Arial, sans-serif;letter-spacing: 0; color: white; margin: 10px 0px; padding: 0px;}
-      h1.airstream a { color: white; text-decoration: none; }
-      @font-face {
-      	font-family: 'AirstreamRegular';
-      	src: url('Airstream-webfont.eot');
-      	src: local('Airstream-webfont.ttf'), url('Airstream-webfont.woff') format('woff'), url('Airstream-webfont.ttf') format('truetype'), url('Airstream-webfont.svg#webfontAOJTPlzn') format('svg');
-      	font-weight: normal;
-      	font-style: normal;
-      }
-      @font-face {
-      	font-family: 'firsttestRegular';
-      	src: url('Forque-webfont.eot');
-      	src: local('☺'), url('Forque-webfont.woff') format('woff'), url('Forque-webfont.ttf') format('truetype'), url('Forque-webfont.svg#webfontmmrUNGud') format('svg');
-      	font-weight: normal;
-      	font-style: normal;
-      }
-      h2.forque {font: 36px/42px 'firsttestRegular', Arial, sans-serif;letter-spacing: 0; margin: 0px; padding: 0px; }
-      h2 a { text-decoration: none; color: white; margin: 0px; padding: 0px; }
-      #content { text-align: left; padding: 12px; background-color: #666; }
-      #footer { margin: 0px auto; width: 946px; background-color: #000; color: #fff; padding: 12px; text-align: left;}
-    </style>
   </head>
   <body>
     <div id='wrapper'>
@@ -44,7 +16,17 @@
         <img src="peter-graves.jpg" width="300" height="202" alt="Peter Graves" id="the_captain">
       </div>
       <div id='content'>
-        <h3 class="airstream">Home Page</h3>
+        <h3 class="airstream">Gem-Based Admins for Clearance</h3>
+<p>Do you like movies about gladiators or <a href="http://github.com/thoughtbot/clearance">Clearance-based</a> authentication? If you do, you and Captain Oveur will become fast friends. Captain Oveur adds user-management tools and admin authentication to make flights of web development smoother.</p>
+<p>Tested with Rails 2.3.5 and Clearance 0.8.8</p>
+<p>Install it as a gem (after installing the clearance gem, then &#8220;script/generate&#8221;-ing clearance, cucumber and clearance_features):</p>
+<p><code>gem install captain_oveur</code></p>
+<p><code>script/generate captain_oveur</code></p>
+<p>To use the cucumber features for Captain_Oveur:</p>
+<p><code>script/generate captain_oveur_features</code></p>
+<p><span class="caps">NOTE</span></p>
+<p>A lot of this gem looks exactly like <a href="http://github.com/thoughtbot/clearance">clearance</a>. Firstly, I am an unabashed fan of <a href="http://thoughtbot.com">thoughtbot</a> and clearance. Given the problem domain, I also think it was the best way to handle a lot of issues, but I am open to criticism and/or suggestions.</p>
+<p>&#169; 2009-2010 Disruptive Ventures, Inc. See <span class="caps">LICENSE</span> for details.</p>
         <div class='clearfix'></div>
       </div>
       <div id='footer'><h2 class="forque"><a href="http://disruptive.github.com/">Created by Disruptive Ventures, Inc.</a></h2></div>
