@@ -18,9 +18,17 @@ To use the cucumber features for Captain_Oveur:
 
 @script/generate captain_oveur_features@
 
-NOTE
+NOTE #1
 
 A lot of this gem looks exactly like "clearance":http://github.com/thoughtbot/clearance. Firstly, I am an unabashed fan of "thoughtbot":http://thoughtbot.com and clearance. Given the problem domain, I also think it was the best way to handle a lot of issues, but I am open to criticism and/or suggestions.
+
+NOTE #2
+
+It looks like nearly 50 people downloaded 0.8.9, and for that I am truly sorry. 
+
+0.8.9 was kind of a mess - a few of the filenames were maimed by an unruly git client, making it unusable. 
+
+0.8.10 fixes all of that and makes a few other improvements.
 
 (c) 2009-2010 Disruptive Ventures, Inc. See LICENSE for details.
 
