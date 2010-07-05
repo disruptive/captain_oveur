@@ -1,3 +1,7 @@
+0.8.11 (7/5/2010)
+
+* moved controllers and views 1 level deeper in engine to facilitate overriding them (overriding example coming soon to wiki)
+
 0.8.10 (7/5/2010)
 
 * cucumber features added

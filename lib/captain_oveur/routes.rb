@@ -9,12 +9,13 @@ module CaptainOveur
     #   Clearance::Routes.draw(map)
     #   CaptainOveur::Routes.draw(map)
     def self.draw(map)
-      
+    
       map.namespace :admin do |admin|
-         admin.resources :users
+         admin.resources :users, :controller => 'captain_oveur/users'
       end
 
     end
 
   end
 end
+

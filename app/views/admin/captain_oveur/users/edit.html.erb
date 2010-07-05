@@ -1,4 +1,5 @@
 <h1>Edit User <%= @user.id %></h1>
+
 <%= render(:partial => "form") %>
 
 <%= button_to "Activate Admin", { :action => "activate_admin", :id => @user.id }, { :confirm => "Are you sure?", :id => "activate_admin_user_#{@user.id}" } %>

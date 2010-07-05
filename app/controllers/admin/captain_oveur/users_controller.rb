@@ -1,4 +1,4 @@
-class Admin::UsersController < ApplicationController
+class Admin::CaptainOveur::UsersController < ApplicationController
 
   before_filter :admin_only
 

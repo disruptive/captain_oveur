@@ -10,6 +10,9 @@ class CaptainOveurGenerator < Rails::Generator::Base
 
       m.insert_into "app/controllers/application_controller.rb",
                     "include CaptainOveur::Authentication"
+                    
+
+      m.insert_into "app/models/user.rb", "include CaptainOveur::User"
 
 
       m.insert_into "config/routes.rb",
