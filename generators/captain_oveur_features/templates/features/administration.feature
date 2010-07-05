@@ -57,7 +57,6 @@ Feature: Administrate Site Users
       And I fill in "user_email" with "zachery2@jerryr.dev"
       And I press "Update User"
     Then I should see "User zachery2@jerryr.dev was successfully updated."
-      And I should see "Zachery Maloney"
   
   Scenario: Administrator should be able to view a User
     Given I am an admin signed in as "ken@tacostorm.dev/password"

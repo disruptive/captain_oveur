@@ -1,10 +1,12 @@
-Gem-Based Admins for Clearance
+*Gem-Based Admins for Clearance*
 
-Do you like movies about gladiators or Clearance-based authentication? If you do, you and Captain Oveur will become fast friends. Captain Oveur adds user-management tools and admin authentication to make flights of web development smoother.
+Do you like movies about gladiators or "Clearance-based":http://github.com/thoughtbot/clearance authentication? If you do, you and Captain Oveur will become fast friends. Captain Oveur adds user-management tools and admin authentication to make flights of web development smoother.
 
 Tested with Rails 2.3.5 and Clearance 0.8.8
 
-Install it as a gem: gem install captain_oveur
+Install it as a gem (after installing clearance, cucumber and clearance_features): 
+
+gem install captain_oveur
 
 script/generate captain_oveur
 
@@ -14,6 +16,6 @@ script/generate captain_oveur_features
 
 NOTE
 
-A lot of this gem looks exactly like clearance. Firstly, I am an unabashed fan of thoughtbot and clearance. Given the problem domain, I also think it was the best way to handle a lot of issues, but I am open to criticism and suggestions.
+A lot of this gem looks exactly like "clearance":http://github.com/thoughtbot/clearance. Firstly, I am an unabashed fan of "thoughtbot":http://thoughtbot.com and clearance. Given the problem domain, I also think it was the best way to handle a lot of issues, but I am open to criticism and/or suggestions.
 
-&copy; 2009-2010 Disruptive Ventures, Inc. See LICENSE for details.
+(c) 2009-2010 Disruptive Ventures, Inc. See LICENSE for details.
