@@ -14,6 +14,15 @@ for the cucumber features:
 
 script/generate captain_oveur_features
 
+IDEAS
+
+Role-based Authentication
+
+* roles table - admin is built-in
+* script/generate captain_oveur_role :content_manager <= add a role to the roles
+* authentication will use the roles (meta-programmed instance methods for user.rb and authentication.rb)
+* before_filter :co_admins
+
 NOTE
 
 A lot of this gem looks exactly like clearance. Firstly, I am an unabashed fan of thoughtbot and clearance. Given the problem domain, I also think it was the best way to handle a lot of issues, but I am open to criticism and/or suggestions.
