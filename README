@@ -16,7 +16,7 @@ script/generate captain_oveur_features
 
 IDEAS
 
-Role-based Authentication
+Role-based Authentication (in time for Clearance 1.0 release)
 
 * roles table - admin is built-in
 * script/generate captain_oveur_role :content_manager <= add a role to the roles
