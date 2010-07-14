@@ -1,6 +1,7 @@
-class Admin::CaptainOveur::UsersController < ApplicationController
+class CaptainOveur::UsersController < ApplicationController
 
   before_filter :admin_only
+  self.append_view_path("/views/admin/users")
 
   def index
     @users = User.all

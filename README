@@ -16,9 +16,14 @@ script/generate captain_oveur_features
 
 IDEAS
 
+While the installable cucumber features are nice, internal testing with an embedded install of rails, like Clearance, would make revising CaptainOveur cleaner...
+
+First User Should be an Admin
+
 Role-based Authentication (in time for Clearance 1.0 release)
 
 * roles table - admin is built-in
+* user_roles
 * script/generate captain_oveur_role :content_manager <= add a role to the roles
 * authentication will use the roles (meta-programmed instance methods for user.rb and authentication.rb)
 * before_filter :co_admins

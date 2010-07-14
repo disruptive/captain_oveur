@@ -1,3 +1,9 @@
+0.8.12 (7/14/2010)
+
+* removed "admin" level of folders under controllers - not needed when namespacing in the routes
+* removed "captain_oveur" level of folders under views - made overriding kind of hairy...
+* added append_view_path to users_controller to catch views in views/admin/users
+
 0.8.11 (7/5/2010)
 
 * moved controllers and views 1 level deeper in engine to facilitate overriding them (overriding example coming soon to wiki)
