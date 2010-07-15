@@ -18,6 +18,7 @@ generators/captain_oveur/lib/insert_commands.rb
 generators/captain_oveur/lib/rake_commands.rb
 generators/captain_oveur/templates/admins.rb
 generators/captain_oveur/templates/migrations/update_admins.rb
+generators/captain_oveur_features/README
 generators/captain_oveur_features/USAGE
 generators/captain_oveur_features/captain_oveur_features_generator.rb
 generators/captain_oveur_features/templates/features/administration.feature
