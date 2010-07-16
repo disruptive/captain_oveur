@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('captain_oveur', '0.8.12') do |p|
+Echoe.new('captain_oveur', '0.8.13') do |p|
   p.description    = "Admins for Clearance"
   p.url            = "http://disruptive.github.com/captain_oveur"
   p.author         = "Jerry Richardson, Zachery Maloney"

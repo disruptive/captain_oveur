@@ -1,5 +1,6 @@
 class CaptainOveur::UsersController < ApplicationController
-
+  unloadable
+  
   before_filter :admin_only
   self.append_view_path("../../views/")
 
