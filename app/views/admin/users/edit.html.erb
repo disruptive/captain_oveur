@@ -1,7 +1,7 @@
 <h1>Edit User <%= @user.id %></h1>
 
-<%= render(:partial => "form") %>
+<%= render(:partial => "admin/users/form") %>
 
-<%= button_to "Activate Admin", { :action => "activate_admin", :id => @user.id }, { :confirm => "Are you sure?", :id => "activate_admin_user_#{@user.id}" } %>
+<%= button_to "Activate Admin", activate_admin_admin_user_path(@user), { :method => :put, :confirm => "Are you sure?", :id => "activate_admin_user_#{@user.id}" } %>
 
-<%= button_to "Deactivate Admin", { :action => "deactivate_admin", :id => @user.id }, { :confirm => "Are you sure?", :id => "deactivate_admin_user_#{@user.id}" } %>
+<%= button_to "Deactivate Admin", deactivate_admin_admin_user_path(@user), { :method => :put, :confirm => "Are you sure?", :id => "deactivate_admin_user_#{@user.id}" } %>
