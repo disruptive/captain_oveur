@@ -1,0 +1,153 @@
+diff -c -r /home/swetha/repos/captain_oveur/test/test_app/app/controllers/application_controller.rb ./app/controllers/application_controller.rb
+*** /home/swetha/repos/captain_oveur/test/test_app/app/controllers/application_controller.rb	2010-07-23 12:33:16.993512218 -0400
+--- ./app/controllers/application_controller.rb	2010-07-23 12:00:46.566202061 -0400
+***************
+*** 6,12 ****
+    include CaptainOveur::Authentication
+    helper :all # include all helpers, all the time
+    protect_from_forgery # See ActionController::RequestForgeryProtection for details
+! 
+    # Scrub sensitive parameters from your log
+    # filter_parameter_logging :password
+  end
+--- 6,12 ----
+    include CaptainOveur::Authentication
+    helper :all # include all helpers, all the time
+    protect_from_forgery # See ActionController::RequestForgeryProtection for details
+!   layout 'home'
+    # Scrub sensitive parameters from your log
+    # filter_parameter_logging :password
+  end
+Only in ./app/views/layouts: home.html.erb
+diff -c -r /home/swetha/repos/captain_oveur/test/test_app/config/environment.rb ./config/environment.rb
+*** /home/swetha/repos/captain_oveur/test/test_app/config/environment.rb	2010-07-23 12:32:32.249531538 -0400
+--- ./config/environment.rb	2010-07-23 09:12:47.921513704 -0400
+***************
+*** 7,14 ****
+  require File.join(File.dirname(__FILE__), 'boot')
+  
+  Rails::Initializer.run do |config|
+-   config.gem 'clearance', :version => '=0.8.8'
+-   config.gem 'captain_oveur'
+    # Settings in config/environments/* take precedence over those specified here.
+    # Application configuration should go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded.
+--- 7,12 ----
+***************
+*** 21,27 ****
+    # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
+    # config.gem "sqlite3-ruby", :lib => "sqlite3"
+    # config.gem "aws-s3", :lib => "aws/s3"
+! 
+    # Only load the plugins named here, in the order given (default is alphabetical).
+    # :all can be used as a placeholder for all plugins not explicitly named
+    # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
+--- 19,26 ----
+    # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
+    # config.gem "sqlite3-ruby", :lib => "sqlite3"
+    # config.gem "aws-s3", :lib => "aws/s3"
+!     config.gem "clearance"
+!     config.gem "captain_oveur"
+    # Only load the plugins named here, in the order given (default is alphabetical).
+    # :all can be used as a placeholder for all plugins not explicitly named
+    # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
+***************
+*** 40,43 ****
+    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
+    # config.i18n.default_locale = :de
+! end
+\ No newline at end of file
+--- 39,42 ----
+    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
+    # config.i18n.default_locale = :de
+! end
+diff -c -r /home/swetha/repos/captain_oveur/test/test_app/config/environments/cucumber.rb ./config/environments/cucumber.rb
+*** /home/swetha/repos/captain_oveur/test/test_app/config/environments/cucumber.rb	2010-07-23 12:32:53.909511667 -0400
+--- ./config/environments/cucumber.rb	2010-07-23 09:28:38.517514587 -0400
+***************
+*** 25,27 ****
+--- 25,49 ----
+  config.gem 'database_cleaner', :lib => false, :version => '>=0.5.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/database_cleaner'))
+  config.gem 'webrat',           :lib => false, :version => '>=0.7.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/webrat'))
+  
++ config.gem 'factory_girl'
++ 
++ config.action_mailer.default_url_options = { :host => 'example.com' }
++ 
++ class RackRailsCookieHeaderHack
++  def initialize(app)
++    @app = app
++  end
++ 
++  def call(env)
++    status, headers, body = @app.call(env)
++    if headers['Set-Cookie'] && headers['Set-Cookie'].respond_to?(:collect!)
++      headers['Set-Cookie'].collect! { |h| h.strip }
++    end
++    [status, headers, body]
++  end
++ end
++ 
++ config.after_initialize do
++  ActionController::Dispatcher.middleware.insert_before(ActionController::Base.session_store, RackRailsCookieHeaderHack)
++ end
++ 
+diff -c -r /home/swetha/repos/captain_oveur/test/test_app/config/environments/test.rb ./config/environments/test.rb
+*** /home/swetha/repos/captain_oveur/test/test_app/config/environments/test.rb	2010-07-23 12:32:32.129513208 -0400
+--- ./config/environments/test.rb	2010-07-23 09:19:21.357512056 -0400
+***************
+*** 25,28 ****
+  # Use SQL instead of Active Record's schema dumper when creating the test database.
+  # This is necessary if your schema can't be completely dumped by the schema dumper,
+  # like if you have constraints or database-specific column types
+! # config.active_record.schema_format = :sql
+\ No newline at end of file
+--- 25,30 ----
+  # Use SQL instead of Active Record's schema dumper when creating the test database.
+  # This is necessary if your schema can't be completely dumped by the schema dumper,
+  # like if you have constraints or database-specific column types
+! # config.active_record.schema_format = :sql
+! 
+! config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+diff -c -r /home/swetha/repos/captain_oveur/test/test_app/config/routes.rb ./config/routes.rb
+*** /home/swetha/repos/captain_oveur/test/test_app/config/routes.rb	2010-07-23 12:33:16.997512210 -0400
+--- ./config/routes.rb	2010-07-23 09:23:36.429511627 -0400
+***************
+*** 33,39 ****
+    #   end
+  
+    # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
+!   # map.root :controller => "welcome"
+  
+    # See how all your routes lay out with "rake routes"
+  
+--- 33,39 ----
+    #   end
+  
+    # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
+!   map.root :controller => "home"
+  
+    # See how all your routes lay out with "rake routes"
+  
+diff -c -r /home/swetha/repos/captain_oveur/test/test_app/lib/tasks/cucumber.rake ./lib/tasks/cucumber.rake
+*** /home/swetha/repos/captain_oveur/test/test_app/lib/tasks/cucumber.rake	2010-07-23 12:32:53.925511792 -0400
+--- ./lib/tasks/cucumber.rake	2010-07-23 09:09:43.465512971 -0400
+***************
+*** 7,13 ****
+  
+  unless ARGV.any? {|a| a =~ /^gems/} # Don't load anything when running the gems:* tasks
+  
+! vendored_cucumber_bin = Dir["#{RAILS_ROOT}/vendor/{gems,plugins}/cucumber*/bin/cucumber"].first
+  $LOAD_PATH.unshift(File.dirname(vendored_cucumber_bin) + '/../lib') unless vendored_cucumber_bin.nil?
+  
+  begin
+--- 7,13 ----
+  
+  unless ARGV.any? {|a| a =~ /^gems/} # Don't load anything when running the gems:* tasks
+  
+! vendored_cucumber_bin = Dir["#{Rails.root}/vendor/{gems,plugins}/cucumber*/bin/cucumber"].first
+  $LOAD_PATH.unshift(File.dirname(vendored_cucumber_bin) + '/../lib') unless vendored_cucumber_bin.nil?
+  
+  begin

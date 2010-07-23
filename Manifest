@@ -32,7 +32,6 @@ lib/captain_oveur/user.rb
 test/captain_oveur_test.rb
 test/clearance_config.rb
 test/configuration.patch
-test/cuke.patch
 test/factories/admins.rb
 test/template.rb
 test/test_helper.rb

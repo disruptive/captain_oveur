@@ -7,10 +7,10 @@ Rails::Generator::Commands::Base.class_eval do
 end
 
 Rails::Generator::Commands::Create.class_eval do
-  def insert_into_jwr_file(file, line)
+  def insert_into_file(file, line)
     logger.insert "#{line} into #{file}"
     unless options[:pretend] || file_contains?(file, line)
-      gsub_file file, /^(class|module|.*Clearance).*$/ do |match|
+      gsub_file file, /^(.*Clearance).*$/ do |match|
         "#{match}\n  #{line}"
       end
     end

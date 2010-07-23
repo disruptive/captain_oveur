@@ -12,6 +12,7 @@ namespace :generator do
   task :test_app do
     system "cd test && rails test_app -f -m template.rb"
     system "cd test/test_app && rake rails:unfreeze"
+    # system "cd test/test_app && git apply ../configuration.patch"
   end
 end
 
