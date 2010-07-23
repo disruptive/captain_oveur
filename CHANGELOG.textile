@@ -1,3 +1,7 @@
+0.8.15 (7/23/2010)
+
+* test with a generated rails app, configured for clearance
+
 0.8.14 (7/17/2010)
 
 * admin activation and deactivation
