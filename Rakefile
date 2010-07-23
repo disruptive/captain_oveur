@@ -5,12 +5,13 @@ require 'echoe'
 namespace :generator do
   desc "Cleans up the test app before running the generator"
   task :cleanup do
-    FileUtils.rm_rf("test/rails_root")
+    FileUtils.rm_rf("test/test_app")
   end
 
   desc "Create the Rails App"
-  task :gen_rails do
-    system "cd test && rails rails_root -f -m template.rb"
+  task :test_app do
+    system "cd test && rails test_app -f -m template.rb"
+    system "cd test/test_app && rake rails:unfreeze"
   end
 end
 

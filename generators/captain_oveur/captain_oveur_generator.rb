@@ -5,12 +5,12 @@ class CaptainOveurGenerator < Rails::Generator::Base
 
   def manifest
     record do |m|
-      m.insert_into "app/controllers/application_controller.rb", "include CaptainOveur::Authentication"
-      m.insert_into "app/models/user.rb", "include CaptainOveur::User"
+      m.insert_into_jwr_file "app/controllers/application_controller.rb", "include CaptainOveur::Authentication"
+      m.insert_into_jwr_file "app/models/user.rb", "include CaptainOveur::User"
       
       routes_file = "config/routes.rb"
 
-      m.insert_into routes_file, "CaptainOveur::Routes.draw(map)"
+      m.insert_into_jwr_file routes_file, "CaptainOveur::Routes.draw(map)"
       m.directory File.join("test", "factories")
       m.file "admins.rb", "test/factories/clearance_admins.rb"
       m.migration_template "migrations/update_admins.rb", 'db/migrate', :migration_file_name => "captain_oveur_#{migration_target_name}"

@@ -7,13 +7,14 @@ gem 'cucumber', :env => [:cucumber]
 gem 'cucumber-rails', :env => [:cucumber] 
 gem 'database_cleaner', :env => [:cucumber] 
 gem 'webrat', :env => [:cucumber] 
-gem 'rspec', :env => [:cucumber, :test ] 
-gem 'rspec-rails', :env => [:cucumber, :test] 
-gem "factory_girl", :env => [:cucumber, :test] 
+gem 'rspec', :env => [:cucumber] 
+gem 'rspec-rails', :env => [:cucumber] 
+gem "factory_girl", :env => [:cucumber] 
 gem "launchy", :env => [:cucumber] 
 
-gem 'clearance', :version => "=0.8.8"
 gem 'captain_oveur' 
+gem 'clearance', :version => "=0.8.8"
+
 
 # Install gems on local system
 rake('gems:install')
@@ -27,5 +28,5 @@ generate(:captain_oveur)
 rake('db:migrate')
 generate(:clearance_features, "-f")
 generate(:captain_oveur_features, "-f")
-generate(:captain_oveur_self_test, "-f")
 rake('db:test:prepare')
+rake('log:clear')
