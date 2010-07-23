@@ -6,12 +6,12 @@ README.textile
 Rakefile
 VERSION
 app/controllers/admin/captain_oveur/users_controller.rb
+app/controllers/captain_oveur/users_controller.rb
 app/views/admin/users/_form.erb
 app/views/admin/users/edit.html.erb
 app/views/admin/users/index.html.erb
 app/views/admin/users/new.html.erb
 app/views/admin/users/show.html.erb
-captain_oveur.gemspec
 generators/captain_oveur/README
 generators/captain_oveur/USAGE
 generators/captain_oveur/captain_oveur_generator.rb
