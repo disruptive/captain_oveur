@@ -42,5 +42,5 @@ Echoe.new('captain_oveur', '0.8.15') do |p|
   p.email          = "jerry@disruptiveventures.com"
   p.ignore_pattern = ['_site/*', 'Manifest', 'test/rails_root/*']
   p.runtime_dependencies = ["clearance >=0.8.8","formtastic >=0.9.10"]
-  p.development_dependencies = ["rails=2.3.8", "cucumber", "Rspec", "sqlite3"]
+  p.development_dependencies = []
 end

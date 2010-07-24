@@ -26,24 +26,12 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<clearance>, [">= 0.8.8"])
       s.add_runtime_dependency(%q<formtastic>, [">= 0.9.10"])
-      s.add_development_dependency(%q<rails=2.3.8>, [">= 0"])
-      s.add_development_dependency(%q<cucumber>, [">= 0"])
-      s.add_development_dependency(%q<Rspec>, [">= 0"])
-      s.add_development_dependency(%q<sqlite3>, [">= 0"])
     else
       s.add_dependency(%q<clearance>, [">= 0.8.8"])
       s.add_dependency(%q<formtastic>, [">= 0.9.10"])
-      s.add_dependency(%q<rails=2.3.8>, [">= 0"])
-      s.add_dependency(%q<cucumber>, [">= 0"])
-      s.add_dependency(%q<Rspec>, [">= 0"])
-      s.add_dependency(%q<sqlite3>, [">= 0"])
     end
   else
     s.add_dependency(%q<clearance>, [">= 0.8.8"])
     s.add_dependency(%q<formtastic>, [">= 0.9.10"])
-    s.add_dependency(%q<rails=2.3.8>, [">= 0"])
-    s.add_dependency(%q<cucumber>, [">= 0"])
-    s.add_dependency(%q<Rspec>, [">= 0"])
-    s.add_dependency(%q<sqlite3>, [">= 0"])
   end
 end
