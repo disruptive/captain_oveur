@@ -8,20 +8,29 @@ module CaptainOveur
     
     module ClassMethods
       def self.extended(controller)
-        controller.helper_method :admin?
-        controller.hide_action   :admin?, :admin_only
+	["admin"].each do |role_name|
+	  controller.helper_method "#{role_name}?".to_sym # :admin?
+	  controller.hide_action "#{role_name}?".to_sym, "#{role_name}_only".to_sym
+	end
       end
     end
 
     module InstanceMethods
-      def admin?
-        current_user && current_user.admin
-      end
       
-      def admin_only
-        deny_access("Please Login as an administrator to Access that Feature.") unless admin?
+      #Role.all
+      ["admin"].each do |role_name|
+
+	define_method "#{role_name}?".to_sym do
+	  current_user && current_user.send(role_name)
+	end
+      
+	define_method "#{role_name}_only".to_sym do 
+	  deny_access("Please Login as an #{role_name.humanize} to Access that Feature.") unless current_user.send("#{role_name}?")
+	end
+      
       end
-    end
     
+    end
+        
   end
 end
