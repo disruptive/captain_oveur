@@ -21,7 +21,23 @@ rake('gems:install')
 #rake('db:create:all')
 #generate("rspec")
 generate(:controller, "home", "index")
+
+route "map.root :controller => 'home'"
+
+
 generate(:cucumber, "--force --webrat")
+
+file 'app/views/layouts/home.html.erb', <<-CODE
+<div id="flash">
+  <% flash.each do |key, value| -%>
+    <div id="flash_<%= key %>"><%=h value %></div>
+  <% end -%>
+</div>
+<%= yield %>
+CODE
+
+
+
 generate(:clearance, "-f")
 rake('db:migrate')
 generate(:captain_oveur)
